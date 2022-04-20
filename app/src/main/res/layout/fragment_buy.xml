@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <!-- Guideline para margen esquerda -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/leftMarginGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <!-- Guideline para margen direita -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/rightMarginGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <include
+                android:id="@+id/includeSearchLocation"
+                layout="@layout/layout_card_localization"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+                app:layout_constraintStart_toStartOf="@+id/leftMarginGuideline"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.example.newicarrosexamplepf.component.NestedScrollableHost
+                android:id="@+id/nestedScrollableHostMostBrands"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/includeSearchLocation">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewMostSearchedBrands"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/includeSearchLocation"
+                    tools:listitem="@layout/item_layout_most_makes"
+                    tools:visibility="visible" />
+
+            </com.example.newicarrosexamplepf.component.NestedScrollableHost>
+
+            <include
+                android:id="@+id/includeBannerFeirao"
+                layout="@layout/layout_banner_feirao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+                app:layout_constraintStart_toStartOf="@+id/leftMarginGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/nestedScrollableHostMostBrands" />
+
+            <TextView
+                android:id="@+id/lastDealsTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="8dp"
+                android:text="Últimos anúncios vistos"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+                app:layout_constraintStart_toStartOf="@+id/leftMarginGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/includeBannerFeirao" />
+
+            <com.example.newicarrosexamplepf.component.NestedScrollableHost
+                android:id="@+id/nestedScrollableLastDeals"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintTop_toBottomOf="@+id/lastDealsTitle">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewLastDeals"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintTop_toBottomOf="@+id/includeSearchLocation"
+                    tools:listitem="@layout/item_last_deals"
+                    tools:visibility="visible" />
+
+            </com.example.newicarrosexamplepf.component.NestedScrollableHost>
+
+            <TextView
+                android:id="@+id/searchInText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:text="Comprar"
+                android:textColor="@color/blue"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nestedScrollableLastDeals" />
+
+            <TextView
+                android:id="@+id/searchInText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:text="Comprar"
+                android:textColor="@color/blue"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchInText" />
+
+            <TextView
+                android:id="@+id/searchInText3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:layout_marginBottom="90dp"
+                android:text="Comprar"
+                android:textColor="@color/blue"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchInText2" />
+
+            <TextView
+                android:id="@+id/searchInText4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="190dp"
+                android:text="Comprar"
+                android:textColor="@color/blue"
+                android:textSize="30sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchInText3" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
