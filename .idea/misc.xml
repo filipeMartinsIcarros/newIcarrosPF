@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_baseline_location.xml" value="0.336" />
+        <entry key="app/src/main/res/drawable/ic_calculate.xml" value="0.336" />
         <entry key="app/src/main/res/drawable/ic_keyboard_arrow_down.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/state_checked_menu.xml" value="0.217" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.35778985507246375" />
-        <entry key="app/src/main/res/layout/fragment_buy.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_buy.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_catalog.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/fragment_financing.xml" value="0.35778985507246375" />
@@ -20,7 +22,10 @@
         <entry key="app/src/main/res/layout/item_last_deals.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/item_layout_most_brands.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/item_layout_most_makes.xml" value="0.35778985507246375" />
+        <entry key="app/src/main/res/layout/item_most_search_deals.xml" value="0.35778985507246375" />
+        <entry key="app/src/main/res/layout/item_search_by_price.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/layout_banner_feirao.xml" value="0.35778985507246375" />
+        <entry key="app/src/main/res/layout/layout_card_financing.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/layout_card_localization.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/layout_home.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottom_navigation_home.xml" value="0.37604166666666666" />

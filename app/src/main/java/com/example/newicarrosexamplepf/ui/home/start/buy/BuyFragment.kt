@@ -5,18 +5,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
 import com.example.newicarrosexamplepf.databinding.FragmentBuyBinding
 import com.example.newicarrosexamplepf.models.buy.getDeals
 import com.example.newicarrosexamplepf.models.buy.getMakes
+import com.example.newicarrosexamplepf.models.buy.getModels
+import com.example.newicarrosexamplepf.models.buy.getSearchPrice
 import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.LastDealsAdapter
 import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.MostSearchedMakesAdapter
+import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.MostSearchedModelsAdapter
+import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.SearchByPriceAdapter
 
 class BuyFragment : Fragment() {
 
     private lateinit var binding: FragmentBuyBinding
     private lateinit var adapterMostMakes: MostSearchedMakesAdapter
     private lateinit var adapterLastDeals: LastDealsAdapter
+    private lateinit var adapterMostModels: MostSearchedModelsAdapter
+    private lateinit var adapterSearchByPrice: SearchByPriceAdapter
 
     companion object {
         fun newInstance() = BuyFragment()
@@ -42,7 +47,21 @@ class BuyFragment : Fragment() {
         adapterMostMakes = MostSearchedMakesAdapter(getMakes())
         recyclerViewMostSearchedBrands.adapter = adapterMostMakes
 
+        binding.includeBannerFeirao.root.setOnClickListener{
+
+        }
+
         adapterLastDeals = LastDealsAdapter(getDeals())
         recyclerViewLastDeals.adapter = adapterLastDeals
+
+        binding.includeMockFinancing.root.setOnClickListener{
+
+        }
+
+        adapterMostModels = MostSearchedModelsAdapter(getModels())
+        recyclerViewMostSearchModels.adapter = adapterMostModels
+
+        adapterSearchByPrice = SearchByPriceAdapter(getSearchPrice())
+        recyclerViewSearchByPrice.adapter = adapterSearchByPrice
     }
 }
