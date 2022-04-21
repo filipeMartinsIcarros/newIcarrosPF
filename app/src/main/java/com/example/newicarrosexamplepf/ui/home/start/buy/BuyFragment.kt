@@ -6,14 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.newicarrosexamplepf.databinding.FragmentBuyBinding
-import com.example.newicarrosexamplepf.models.buy.getDeals
-import com.example.newicarrosexamplepf.models.buy.getMakes
-import com.example.newicarrosexamplepf.models.buy.getModels
-import com.example.newicarrosexamplepf.models.buy.getSearchPrice
-import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.LastDealsAdapter
-import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.MostSearchedMakesAdapter
-import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.MostSearchedModelsAdapter
-import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.SearchByPriceAdapter
+import com.example.newicarrosexamplepf.models.buy.*
+import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.*
 
 class BuyFragment : Fragment() {
 
@@ -22,6 +16,7 @@ class BuyFragment : Fragment() {
     private lateinit var adapterLastDeals: LastDealsAdapter
     private lateinit var adapterMostModels: MostSearchedModelsAdapter
     private lateinit var adapterSearchByPrice: SearchByPriceAdapter
+    private lateinit var adapterStore: StoreAdapter
 
     companion object {
         fun newInstance() = BuyFragment()
@@ -63,5 +58,8 @@ class BuyFragment : Fragment() {
 
         adapterSearchByPrice = SearchByPriceAdapter(getSearchPrice())
         recyclerViewSearchByPrice.adapter = adapterSearchByPrice
+
+        adapterStore = StoreAdapter(getListStore())
+        recyclerViewStore.adapter = adapterStore
     }
 }

@@ -1,5 +1,26 @@
 package com.example.newicarrosexamplepf.models.buy
 
+data class Store(
+    var pathImage: String,
+    var name: String,
+    var locationCity: String,
+    var locationAddress: String,
+    var isFavorite: Boolean
+)
+
+fun getListStore(): List<Store>{
+    val list = mutableListOf<Store>()
+    list.add(Store("http://img1.icarros.com/dbimg/imganunciante/5/795086_1.png","Toyota T line","São Pualo - Sp","Avenida Vereador José Diniz 3500", true))
+    list.add(Store("http://img1.icarros.com/dbimg/imganunciante/5/997921_3.png","Navesa Renault T-63","Goiânia - G0","Av. T-63, nº1707, Qd. 587, Lote 24", true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/131102_2.png","ROBMAR AUTOMÓVEIS","Rio de Janeiro - RJ","Estrada Intendente Magalhães, 1185", true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/50_3.png","AB SAN DIEGO / NISSAN - BARRA","Rio de Janeiro - RJ","Av.  das Américas  7250", true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/1143379_1.png","B&B Multimarcas","São Paulo - SP","Avenida Engenheiro Caetano Álvares, 5006", true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/723365_1.png","B&G Motos e Veículos","São Paulo - SP","Av. Eng. Caetano Alvares, 5639", true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/348633_1.png","B J AUTOMÓVEIS","Santo André - SP","R. Ibiapava, 157", false))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","L C A VEICULOS","Viamão - RS","Avenida Senador Salgado Filho 2200", false))
+    return list
+}
+
 data class Price(
     var title: String,
     var value: String

@@ -12,4 +12,5 @@
     <color name="sixty_transparent_black">#99000000</color>
     <color name="white_gray">#E9E9E9</color>
     <color name="orange_2">#FF6300</color>
+    <color name="red">#FFFF0000</color>
 </resources>

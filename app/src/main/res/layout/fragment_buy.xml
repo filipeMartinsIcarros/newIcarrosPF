@@ -19,7 +19,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingBottom="18dp"
+            android:paddingBottom="32dp"
             android:layout_marginTop="16dp">
 
             <!-- Guideline para margen esquerda -->
@@ -66,7 +66,6 @@
                     android:paddingRight="8dp"
                     android:visibility="visible"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@+id/includeSearchLocation"
                     tools:listitem="@layout/item_layout_most_makes"
                     tools:visibility="visible" />
 
@@ -115,7 +114,6 @@
                     android:paddingRight="8dp"
                     android:visibility="visible"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@+id/includeSearchLocation"
                     tools:listitem="@layout/item_last_deals"
                     tools:visibility="visible" />
 
@@ -138,7 +136,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:paddingLeft="8dp"
-                android:text="Modelos mais bucados"
+                android:text="Modelos mais buscados"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
@@ -164,7 +162,6 @@
                     android:paddingRight="8dp"
                     android:visibility="visible"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@+id/includeSearchLocation"
                     tools:listitem="@layout/item_most_search_models"
                     tools:visibility="visible" />
 
@@ -203,7 +200,6 @@
                     android:paddingRight="8dp"
                     android:visibility="visible"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                    app:layout_constraintTop_toBottomOf="@+id/includeSearchLocation"
                     tools:listitem="@layout/item_search_by_price"
                     tools:visibility="visible" />
 
@@ -215,13 +211,42 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
                 android:paddingLeft="8dp"
-                android:text="Buscar por Loja"
+                android:text="Lojas"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+                app:layout_constraintEnd_toStartOf="@+id/searchStoreMoreTitle"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/nestedScrollableSearchByPrice" />
+
+            <TextView
+                android:id="@+id/searchStoreMoreTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="8dp"
+                android:text="Ver Mais"
+                android:textSize="18sp"
+                android:textColor="@color/blue"
+                app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+                app:layout_constraintTop_toBottomOf="@+id/nestedScrollableSearchByPrice" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewStore"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:nestedScrollingEnabled="false"
+                android:orientation="vertical"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/searchStoreTitle"
+                tools:listitem="@layout/item_search_store"
+                tools:visibility="visible" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

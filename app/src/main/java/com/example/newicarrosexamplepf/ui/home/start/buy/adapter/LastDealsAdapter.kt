@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.newicarrosexamplepf.databinding.ItemLastDealsBinding
 import com.example.newicarrosexamplepf.models.buy.Deals
+import java.text.NumberFormat
 
 class LastDealsAdapter(private val makesList: List<Deals>)
     : RecyclerView.Adapter<LastDealsAdapter.HoursViewHolder>() {
@@ -22,7 +23,7 @@ class LastDealsAdapter(private val makesList: List<Deals>)
         with(holder){
             with(makesList[position]) {
                 binding.trimNameText.text = name
-                binding.dealPriceText.text = "123"
+                binding.dealPriceText.text = NumberFormat.getCurrencyInstance().format(price)
                 Glide.with(holder.itemView.context)
                     .load(listPathImage[0])
                     .into(binding.modelImage)
