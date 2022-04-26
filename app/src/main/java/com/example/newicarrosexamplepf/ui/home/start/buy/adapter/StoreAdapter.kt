@@ -9,17 +9,17 @@ import com.example.newicarrosexamplepf.databinding.ItemSearchStoreBinding
 import com.example.newicarrosexamplepf.models.buy.Store
 
 class StoreAdapter(private val makesList: List<Store>)
-    : RecyclerView.Adapter<StoreAdapter.HoursViewHolder>() {
+    : RecyclerView.Adapter<StoreAdapter.StoreViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoursViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): StoreViewHolder {
         val binding = ItemSearchStoreBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return HoursViewHolder(binding)
+        return StoreViewHolder(binding)
     }
 
     override fun getItemCount() = makesList.size
 
-    override fun onBindViewHolder(holder: HoursViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: StoreViewHolder, position: Int) {
         with(holder){
             with(makesList[position]) {
                 binding.nameStore.text = name
@@ -39,7 +39,7 @@ class StoreAdapter(private val makesList: List<Store>)
         }
     }
 
-    inner class HoursViewHolder(val binding: ItemSearchStoreBinding)
+    inner class StoreViewHolder(val binding: ItemSearchStoreBinding)
         : RecyclerView.ViewHolder(binding.root)
 
 }

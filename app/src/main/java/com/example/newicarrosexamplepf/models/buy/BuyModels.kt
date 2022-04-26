@@ -5,7 +5,8 @@ data class Store(
     var name: String,
     var locationCity: String,
     var locationAddress: String,
-    var isFavorite: Boolean
+    var isFavorite: Boolean,
+    var isDealer: Boolean = false
 )
 
 fun getListStore(): List<Store>{
@@ -18,6 +19,14 @@ fun getListStore(): List<Store>{
     list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/723365_1.png","B&G Motos e Veículos","São Paulo - SP","Av. Eng. Caetano Alvares, 5639", true))
     list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/348633_1.png","B J AUTOMÓVEIS","Santo André - SP","R. Ibiapava, 157", false))
     list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","L C A VEICULOS","Viamão - RS","Avenida Senador Salgado Filho 2200", false))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
     return list
 }
 
@@ -83,6 +92,20 @@ fun getDeals(): List<Deals>{
         "https://img0.icarros.com/dbimg/imgadicionalanuncio/2/245872577_1.png",
         "https://img0.icarros.com/dbimg/imgadicionalanuncio/2/245872579_1.png",
         "https://img0.icarros.com/dbimg/imgadicionalanuncio/2/245872580_1.png"), 264456.0f))
+    return list
+}
+
+data class DealersPartners(
+    var name: String,
+    var pathImage: String
+)
+
+fun getDealersPartners(): List<DealersPartners>{
+    val list = mutableListOf<DealersPartners>()
+    list.add(DealersPartners("Nissan","https://img0.icarros.com/dbimg/imgmarca/1/28_11.png"))
+    list.add(DealersPartners("Mitsubishi","http://img0.icarros.com/dbimg/imgmarca/1/27_16.png"))
+    list.add(DealersPartners("Citroën","http://img0.icarros.com/dbimg/imgmarca/1/7_17.png"))
+    list.add(DealersPartners("Peugeot","http://img0.icarros.com/dbimg/imgmarca/1/29_8.png"))
     return list
 }
 

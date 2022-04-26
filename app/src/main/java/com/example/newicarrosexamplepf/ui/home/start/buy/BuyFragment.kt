@@ -17,6 +17,7 @@ class BuyFragment : Fragment() {
     private lateinit var adapterMostModels: MostSearchedModelsAdapter
     private lateinit var adapterSearchByPrice: SearchByPriceAdapter
     private lateinit var adapterStore: StoreAdapter
+    private lateinit var adapterDealersPartners: DealersPartnersAdapter
 
     companion object {
         fun newInstance() = BuyFragment()
@@ -59,7 +60,10 @@ class BuyFragment : Fragment() {
         adapterSearchByPrice = SearchByPriceAdapter(getSearchPrice())
         recyclerViewSearchByPrice.adapter = adapterSearchByPrice
 
-        adapterStore = StoreAdapter(getListStore())
+        adapterStore = StoreAdapter(getListStore().filter { !it.isDealer })
         recyclerViewStore.adapter = adapterStore
+
+        adapterDealersPartners = DealersPartnersAdapter(getDealersPartners())
+        recyclerViewDealersPartners.adapter = adapterDealersPartners
     }
 }

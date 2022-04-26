@@ -20,6 +20,8 @@
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/fragment_sell.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/fragment_start.xml" value="0.35778985507246375" />
+        <entry key="app/src/main/res/layout/item_dealer.xml" value="0.29981884057971014" />
+        <entry key="app/src/main/res/layout/item_dealer_home.xml" value="0.29981884057971014" />
         <entry key="app/src/main/res/layout/item_last_deals.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/item_layout_most_brands.xml" value="0.35778985507246375" />
         <entry key="app/src/main/res/layout/item_layout_most_makes.xml" value="0.35778985507246375" />

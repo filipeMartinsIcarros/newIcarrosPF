@@ -8,17 +8,17 @@ import com.example.newicarrosexamplepf.databinding.ItemLayoutMostMakesBinding
 import com.example.newicarrosexamplepf.models.buy.Make
 
 class MostSearchedMakesAdapter(private val makesList: List<Make>)
-    : RecyclerView.Adapter<MostSearchedMakesAdapter.HoursViewHolder>() {
+    : RecyclerView.Adapter<MostSearchedMakesAdapter.MostSearchedMakesViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoursViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MostSearchedMakesViewHolder {
         val binding = ItemLayoutMostMakesBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return HoursViewHolder(binding)
+        return MostSearchedMakesViewHolder(binding)
     }
 
     override fun getItemCount() = makesList.size
 
-    override fun onBindViewHolder(holder: HoursViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MostSearchedMakesViewHolder, position: Int) {
         with(holder){
             with(makesList[position]) {
                 binding.nameText.text = name
@@ -32,7 +32,7 @@ class MostSearchedMakesAdapter(private val makesList: List<Make>)
         }
     }
 
-    inner class HoursViewHolder(val binding: ItemLayoutMostMakesBinding)
+    inner class MostSearchedMakesViewHolder(val binding: ItemLayoutMostMakesBinding)
         :RecyclerView.ViewHolder(binding.root)
 
 }

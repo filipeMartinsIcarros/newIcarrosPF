@@ -9,17 +9,17 @@ import com.example.newicarrosexamplepf.models.buy.Deals
 import java.text.NumberFormat
 
 class LastDealsAdapter(private val makesList: List<Deals>)
-    : RecyclerView.Adapter<LastDealsAdapter.HoursViewHolder>() {
+    : RecyclerView.Adapter<LastDealsAdapter.LastDealsHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoursViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LastDealsHolder {
         val binding = ItemLastDealsBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return HoursViewHolder(binding)
+        return LastDealsHolder(binding)
     }
 
     override fun getItemCount() = makesList.size
 
-    override fun onBindViewHolder(holder: HoursViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: LastDealsHolder, position: Int) {
         with(holder){
             with(makesList[position]) {
                 binding.trimNameText.text = name
@@ -34,7 +34,7 @@ class LastDealsAdapter(private val makesList: List<Deals>)
         }
     }
 
-    inner class HoursViewHolder(val binding: ItemLastDealsBinding)
+    inner class LastDealsHolder(val binding: ItemLastDealsBinding)
         : RecyclerView.ViewHolder(binding.root)
 
 }

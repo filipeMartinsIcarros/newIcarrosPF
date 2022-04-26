@@ -8,17 +8,17 @@ import com.example.newicarrosexamplepf.databinding.ItemMostSearchModelsBinding
 import com.example.newicarrosexamplepf.models.buy.Models
 
 class MostSearchedModelsAdapter(private val modelsList: List<Models>)
-    : RecyclerView.Adapter<MostSearchedModelsAdapter.HoursViewHolder>() {
+    : RecyclerView.Adapter<MostSearchedModelsAdapter.MostSearchedModelsViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HoursViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MostSearchedModelsViewHolder {
         val binding = ItemMostSearchModelsBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
-        return HoursViewHolder(binding)
+        return MostSearchedModelsViewHolder(binding)
     }
 
     override fun getItemCount() = modelsList.size
 
-    override fun onBindViewHolder(holder: HoursViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MostSearchedModelsViewHolder, position: Int) {
         with(holder){
             with(modelsList[position]) {
                 binding.text.text = nameModel
@@ -35,7 +35,7 @@ class MostSearchedModelsAdapter(private val modelsList: List<Models>)
         }
     }
 
-    inner class HoursViewHolder(val binding: ItemMostSearchModelsBinding)
+    inner class MostSearchedModelsViewHolder(val binding: ItemMostSearchModelsBinding)
         : RecyclerView.ViewHolder(binding.root)
 
 }

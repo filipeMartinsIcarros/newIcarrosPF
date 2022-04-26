@@ -168,6 +168,44 @@
             </com.example.newicarrosexamplepf.component.NestedScrollableHost>
 
             <TextView
+                android:id="@+id/dealersTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:paddingLeft="8dp"
+                android:text="Concessionárias Parceiras"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nestedScrollableMostSearchModels" />
+
+            <com.example.newicarrosexamplepf.component.NestedScrollableHost
+                android:id="@+id/nestedScrollableDealers"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dealersTitle">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewDealersPartners"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:clipToPadding="false"
+                    android:orientation="horizontal"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:visibility="visible"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_dealer_home"
+                    tools:visibility="visible" />
+
+            </com.example.newicarrosexamplepf.component.NestedScrollableHost>
+
+            <TextView
                 android:id="@+id/searchPriceTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -179,7 +217,7 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/nestedScrollableMostSearchModels" />
+                app:layout_constraintTop_toBottomOf="@+id/nestedScrollableDealers" />
 
             <com.example.newicarrosexamplepf.component.NestedScrollableHost
                 android:id="@+id/nestedScrollableSearchByPrice"
