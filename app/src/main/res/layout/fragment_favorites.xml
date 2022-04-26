@@ -1,19 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/searchInText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Favoritos"
-        android:textColor="@color/blue"
-        android:textSize="30sp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Guideline para margen esquerda -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/leftMarginGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <!-- Guideline para margen direita -->
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rightMarginGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <TextView
+            android:id="@+id/favoriteTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:text="MEUS FAVORITOS"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+            app:layout_constraintStart_toStartOf="@+id/leftMarginGuideline"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/favoriteDealsTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingLeft="8dp"
+            android:text="Anúncios favoritos"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/favoriteDealsClearTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favoriteTitle" />
+
+        <TextView
+            android:id="@+id/favoriteDealsClearTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="8dp"
+            android:text="Apagar todas"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/favoriteTitle" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFavoriteDeals"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favoriteDealsTitle"
+            tools:listitem="@layout/item_last_deals"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/favoriteStorePartnersTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingLeft="8dp"
+            android:text="Concessionárias favoritas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/favoriteStorePartnersClearTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewFavoriteDeals" />
+
+        <TextView
+            android:id="@+id/favoriteStorePartnersClearTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="8dp"
+            android:text="Apagar todas"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewFavoriteDeals" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFavoriteStorePartners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favoriteStorePartnersTitle"
+            tools:listitem="@layout/item_dealer"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/favoriteStoreTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:paddingLeft="8dp"
+            android:text="Lojas Favoritas"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/favoriteStoreClearTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewFavoriteStorePartners" />
+
+        <TextView
+            android:id="@+id/favoriteStoreClearTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="?android:selectableItemBackground"
+            android:layout_marginTop="16dp"
+            android:paddingLeft="8dp"
+            android:text="Apagar todas"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/rightMarginGuideline"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerViewFavoriteStorePartners" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewStore"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingBottom="8dp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/favoriteStoreTitle"
+            tools:listitem="@layout/item_search_store"
+            tools:visibility="visible" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

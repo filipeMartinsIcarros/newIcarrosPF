@@ -6,7 +6,7 @@ data class Store(
     var locationCity: String,
     var locationAddress: String,
     var isFavorite: Boolean,
-    var isDealer: Boolean = false
+    var isDealerPartner: Boolean = false
 )
 
 fun getListStore(): List<Store>{
@@ -19,14 +19,14 @@ fun getListStore(): List<Store>{
     list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/723365_1.png","B&G Motos e Veículos","São Paulo - SP","Av. Eng. Caetano Alvares, 5639", true))
     list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/348633_1.png","B J AUTOMÓVEIS","Santo André - SP","R. Ibiapava, 157", false))
     list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","L C A VEICULOS","Viamão - RS","Avenida Senador Salgado Filho 2200", false))
-    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
-    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
-    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
-    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
-    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
-    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
-    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
-    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", false, isDealer = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", true, isDealerPartner = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", true, isDealerPartner = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", true, isDealerPartner = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", true, isDealerPartner = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", true, isDealerPartner = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", true, isDealerPartner = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", true, isDealerPartner = true))
+    list.add(Store("https://img1.icarros.com/dbimg/imganunciante/5/2499364_1.png","","","", true, isDealerPartner = true))
     return list
 }
 

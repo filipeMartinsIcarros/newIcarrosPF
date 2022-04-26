@@ -1,4 +1,4 @@
-package com.example.newicarrosexamplepf.ui.home.start.buy.adapter
+package com.example.newicarrosexamplepf.models.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.newicarrosexamplepf.databinding.FragmentBuyBinding
 import com.example.newicarrosexamplepf.models.buy.*
-import com.example.newicarrosexamplepf.ui.home.start.buy.adapter.*
+import com.example.newicarrosexamplepf.models.adapter.*
 
 class BuyFragment : Fragment() {
 
@@ -37,13 +37,17 @@ class BuyFragment : Fragment() {
         setViews()
     }
     private fun setViews() = with(binding) {
-        binding.includeSearchLocation.root.setOnClickListener{
+        searchStoreMoreTitle.setOnClickListener {
+
+        }
+
+        includeSearchLocation.root.setOnClickListener{
 
         }
         adapterMostMakes = MostSearchedMakesAdapter(getMakes())
         recyclerViewMostSearchedBrands.adapter = adapterMostMakes
 
-        binding.includeBannerFeirao.root.setOnClickListener{
+        includeBannerFeirao.root.setOnClickListener{
 
         }
 
@@ -60,7 +64,7 @@ class BuyFragment : Fragment() {
         adapterSearchByPrice = SearchByPriceAdapter(getSearchPrice())
         recyclerViewSearchByPrice.adapter = adapterSearchByPrice
 
-        adapterStore = StoreAdapter(getListStore().filter { !it.isDealer })
+        adapterStore = StoreAdapter(getListStore().filter { !it.isDealerPartner })
         recyclerViewStore.adapter = adapterStore
 
         adapterDealersPartners = DealersPartnersAdapter(getDealersPartners())
